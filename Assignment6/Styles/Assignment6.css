@@ -1,0 +1,41 @@
+
+ .cont_head{
+        margin-top: 20px;
+ }
+ 
+ .jumbo_cls{
+        margin-top: 20px;
+height: 450px;
+ }
+ 
+ .jumbo_cls_new{
+ 
+     margin-top: 20px;
+ height: 300px;
+ 
+ }
+ .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+      height: 98px;
+  background-color:#BFC9CA   ;
+  color: white;
+  }
+  .footer_email{
+width: 50px;
+margin-top: 20px;
+  }
+  .ui_class{
+   margin-top: 32px;
+  }
+  .select_class{
+  margin-top: 70px;
+  
+  }
+  .add_more{
+  margin-left: 502px;}
+  .change_ship{
+  margin-top: 20px;
+  }

@@ -1,0 +1,152 @@
+<!doctype html>
+<html ang="en">
+  <head>
+		<title> 
+			Assignment 6
+		</title>
+  </head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./Styles/Assignment6_new.css">
+	<script src="./Assignment6.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+  <body>
+   <h1>Assignment 6</h1>
+    <div class="container cont_head">
+     <div class="jumbotron jumbo_cls">
+	   <div class="col-md-12">
+			<select class="form-control" id="">
+			<option value="Select" >Select</option>
+				<option value="Customer" >Add Customer</option>
+				<option value="Change">Change Shipping Address</option>
+				<option value="Delete">Delete Customer</option>
+			</select>
+	   </div>
+	   <div class="clearfix" ></div>
+	   <div class="jumbo_cls_new" style="border:1px solid blue;">
+		    <div class="Customer select_class" style="display:none;">
+		   <div class="container" >
+		      <div class="form-group col-md-2"> <label>Customer ID:</label>
+				
+			  </div>
+			  <div class="col-md-10">
+			     <input id="customerID" type="text" class="form-control" />
+			  </div>
+			  <div class="clearfix"> </div>
+			  <div class="form-group col-md-2"> <label>Customer Name:</label>
+				
+			  </div>
+			  <div class="col-md-10">
+			     <input id="customerName" type="text" class="form-control" />
+			  </div>
+			   <div class="clearfix"> </div>
+			  <div class="form-group col-md-2"> <label>Customer City </label>
+			  </div>
+			  <div class="col-md-10">
+			     <input id="customerCity" type="text" class="form-control" />
+			  </div>
+			  <div class="clearfix" ></div>
+			  <button onclick="CreateCustomer()" id="newCustomer" type = "button" class = "btn btn-success add_more">ADD Customer</button>
+		   </div>
+		</div>
+		 <div class="Change select_class change_ship" style="display:none;">
+		   <div class="container" >
+		      <div class="form-group col-md-2"> <label>Order number:</label>
+				
+			  </div>
+			  <div class="col-md-10">
+			     <input id="OrderID" type="text" class="form-control" />
+			  </div>
+			  <div class="clearfix"> </div>
+			  <div class="form-group col-md-2"> <label>Ship to name</label>
+			  </div>
+			  <div class="col-md-10">
+			     <input id="ShipName" type="text" class="form-control" />
+			  </div>
+			   <div class="clearfix"> </div>
+			  <div class="form-group col-md-2"> <label>Ship to Street Address </label>
+			  </div>
+			  <div class="col-md-10">
+			     <input id="ShipAddress" type="text" class="form-control" />
+			  </div>
+			  <div class="clearfix" ></div>
+			   <div class="form-group col-md-2"> <label>Ship to city </label>
+			  </div>
+			  <div class="col-md-10">
+			     <input id="ShipCity" type="text" class="form-control" />
+			  </div>
+			  <div class="clearfix" ></div>
+			   <div class="form-group col-md-2"> <label>Ship to postal code </label>
+			  </div>
+			  <div class="col-md-10">
+			     <input id="ShipPostcode" type="text" class="form-control" />
+			  </div>
+			  <div class="clearfix" ></div>
+			  <button onclick="updateOrderAddress()" type = "button" class = "btn btn-success add_more">Change Address</button>
+			   
+		   </div>
+		</div>
+		<div class="Delete select_class" style="display:none;">
+				   <div class="container" >
+					  
+					  <div class="form-group col-md-2"> <label>Customer ID</label>
+					  </div>
+					  <div class="col-md-10">
+						 <input id="CustomerIDForDelete" type="text" class="form-control" />
+					  </div>
+					  <div class="clearfix" ></div>
+					  <button onclick="deleteCustomer()" type = "button" class ="btn btn-success add_more">Delete</button>
+				   </div>
+		</div>
+		<label id="result"></label>
+		
+	   </div>
+	  
+		<!--  <div class="Customer select_class"></div> -->
+        <!-- <div class="Change select_class"></div> -->
+        <!-- <div class="Delete select_class"></div> -->
+	   <div class="clearfix"></div>	
+	  
+     </div>
+     </div>
+  <div class="footer">
+	  	<div class="footer">
+	<div class="container">
+		<div class="row">
+			<ul class="ui_class">
+				<li> 
+					 <div class="li_class pull-left">
+					 <span class="name_calss text-muted">Name:</span>
+					 <span class="name_calss text-muted">ABC</span>
+					  </div>
+				</li>
+				<li> 
+					 <div class="li_class pull-left">
+						<span class="email_class text-muted">Email:</span>
+						<span class="email_class text-muted">Abc@gmail.com</span>
+					  </div>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+</div>
+  </div>
+ <script type="text/javascript">
+	$(document).ready(function(){
+		$("select").change(function(){
+			$(this).find("option:selected").each(function(){
+				var optionValue = $(this).attr("value");
+				if(optionValue){
+					$(".select_class").not("." + optionValue).hide();
+					$("." + optionValue).show();
+				} else{
+					$(".select_class").hide();
+				}
+			});
+		}).change();
+	});
+</script>
+  </body>
+</html>
